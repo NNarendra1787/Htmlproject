@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFile</title>
+    <style>
+        #Result{
+            line-height: 1.1cm;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click URL TO See from DATA</h1>
+
+    <div id="Result">
+        <strong>Entered Data: </strong> <br><br>
+    </div>
+</body>
+<script>
+    const resultList = document.getElementById("Result");
+    // console.log('runs',resultList);
+    new URLSearchParams(window.location.search).forEach((value,name)=>{
+        resultList.append(name + ' :  ' + value);
+        resultList.append(document.createElement('br'));
+    })
+</script>
+</html>
